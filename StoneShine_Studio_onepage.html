@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>StoneShine Studio — Jewellery Editing</title>
+<style>
+  :root{ --bg:#0b0b0b; --gold:#c59b4b; --muted:#faf7f2; --card:#111; }
+  body{margin:0;font-family:Inter, 'Helvetica Neue', Arial, sans-serif;color:var(--muted);background:linear-gradient(180deg,#050505 0%, #0f0f0f 100%);}
+  .container{max-width:1100px;margin:0 auto;padding:36px;}
+  header{display:flex;align-items:center;justify-content:space-between;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.04);}
+  .brand{display:flex;align-items:center;gap:16px}
+  .logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(135deg,var(--gold),#f3e0b4);display:flex;align-items:center;justify-content:center;color:#111;font-weight:700;font-size:20px}
+  h1{margin:0;font-family:Playfair Display, serif;font-size:22px;color:var(--muted)}
+  header p{margin:0;color:rgba(250,247,242,0.75)}
+  .cta a{background:var(--gold);color:#071018;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600}
+  .hero{display:flex;gap:40px;align-items:center;padding:48px 0}
+  .hero-left{flex:1}
+  .hero-right{flex:1;display:flex;justify-content:center}
+  .hero h2{font-family:Playfair Display,serif;font-size:40px;margin:0 0 12px;color:var(--gold)}
+  .hero p{margin:0 0 18px;color:rgba(250,247,242,0.85);font-size:16px;max-width:560px}
+  .buttons{display:flex;gap:12px}
+  .btn-secondary{border:1px solid rgba(255,255,255,0.06);padding:10px 14px;border-radius:8px;color:var(--muted);text-decoration:none}
+  .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:36px 0}
+  .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+  .card h3{margin:0 0 8px;color:var(--gold);font-family:Playfair Display, serif}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:28px}
+  .gallery img{width:100%;height:auto;border-radius:10px;display:block;object-fit:cover;border:1px solid rgba(255,255,255,0.03)}
+  .why{display:flex;gap:18px;align-items:stretch;margin:36px 0}
+  .why .text{flex:1}
+  .contact{background:linear-gradient(180deg, rgba(197,155,75,0.06), rgba(197,155,75,0.03));padding:20px;border-radius:12px;margin-top:18px}
+  footer{padding:30px 0;text-align:center;color:rgba(250,247,242,0.6);font-size:14px}
+  @media(max-width:800px){ .hero{flex-direction:column-reverse;padding:18px 0} .hero-right{width:100%} .hero h2{font-size:28px} }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SS</div>
+        <div>
+          <h1>StoneShine Studio</h1>
+          <p>Premium Jewellery Photo & Reel Editing</p>
+        </div>
+      </div>
+      <div class="cta">
+        <a href="https://wa.me/919352798194" target="_blank" rel="noreferrer">Contact on WhatsApp</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Crafting Luxury Visuals for Jewellery Brands</h2>
+        <p>StoneShine Studio specializes in high-end jewellery photo retouching and premium reel editing — Gold, Diamond, Polki and Colour Stone pieces showcased with studio-level finish.</p>
+        <div class="buttons">
+          <a class="cta" href="#portfolio">View Portfolio</a>
+          <a class="btn-secondary" href="#contact">Get Quote</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img src="file:///mnt/data/placeholder1.jpg" alt="Hero jewellery" style="max-width:420px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.6);">
+      </div>
+    </section>
+
+    <section id="services">
+      <h2 style="text-align:center;color:var(--muted)">Services</h2>
+      <div class="services">
+        <div class="card">
+          <h3>Jewellery Photo Editing</h3>
+          <p>High-end retouching for Gold, Diamond, Polki & Colour Stone Jewellery. Background cleanup, shine boost and realistic colour correction.</p>
+        </div>
+        <div class="card">
+          <h3>Reel Editing</h3>
+          <p>Clean, aesthetic & premium reels specially crafted for jewellery brands — slow motion, soft transitions and highlight animation.</p>
+        </div>
+        <div class="card">
+          <h3>High-End Retouching</h3>
+          <p>Hand-set stone enhancement, micro-detail retouch and flawless final output suitable for catalogue & e-commerce.</p>
+        </div>
+        <div class="card">
+          <h3>Instagram Content</h3>
+          <p>Post templates, highlight icons, and optimized reel thumbnails to boost engagement and conversions.</p>
+      </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2 style="text-align:center;color:var(--muted)">Portfolio</h2>
+      <div class="gallery">
+        <img src="file:///mnt/data/placeholder1.jpg" alt="sample1">
+        <img src="file:///mnt/data/placeholder2.jpg" alt="sample2">
+        <img src="file:///mnt/data/placeholder3.jpg" alt="sample3">
+        <img src="file:///mnt/data/placeholder4.jpg" alt="sample4">
+      </div>
+      <p style="text-align:center;color:rgba(250,247,242,0.7);margin-top:12px">Want these exact edits on your products? <a href="#contact" style="color:var(--gold)">Get a quote</a></p>
+    </section>
+
+    <section class="why">
+      <div class="text">
+        <h2 style="color:var(--muted)">Why Choose StoneShine Studio</h2>
+        <ul style="line-height:1.8;color:rgba(250,247,242,0.85)">
+          <li>Luxury-grade Jewellery Editing</li>
+          <li>Fast Turnaround & Consistent Quality</li>
+          <li>Catalogue & E-commerce Ready Files</li>
+          <li>Client-focused Revisions</li>
+        </ul>
+      </div>
+      <div style="width:320px">
+        <div class="contact">
+          <h3 style="margin:0 0 8px;color:var(--gold)">Get a Quote</h3>
+          <p style="margin:0 0 10px;color:rgba(250,247,242,0.9)">Send sample images or reels on WhatsApp and get a fast estimate.</p>
+          <p style="margin:0 0 8px"><strong>WhatsApp:</strong> <a href="https://wa.me/919352798194" style="color:var(--muted)">+91 93527 98194</a></p>
+          <a href="https://wa.me/919352798194" style="display:inline-block;margin-top:8px;background:var(--gold);color:#071018;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:700">Message on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 StoneShine Studio — Crafted with Precision</p>
+    </footer>
+  </div>
+</body>
+</html>
