@@ -1,197 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StoneShine Studio</title>
-
-  <style>
-    body {
-      background: #000;
-      color: #fff;
-      font-family: Arial;
-      margin: 0;
-      padding: 0;
-    }
-
-    h1, h2 {
-      color: #d4af37;
-      text-align: center;
-    }
-
-    /* SERVICES SECTION */
-    #services {
-      max-width: 900px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .service-item {
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 14px;
-      border-radius: 10px;
-      margin-bottom: 14px;
-    }
-
-    .service-header {
-      width: 100%;
-      background: #222;
-      color: #d4af37;
-      font-size: 18px;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      text-align: left;
-    }
-
-    .service-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.4s ease;
-      padding: 0 6px;
-    }
-
-    .service-content p {
-      margin: 10px 0;
-      color: #ccc;
-      line-height: 1.5;
-    }
-
-    .service-images img {
-      width: 120px;
-      border-radius: 6px;
-      margin-right: 10px;
-      margin-top: 10px;
-    }
-
-    /* PORTFOLIO GRID */
-    #portfolio {
-      max-width: 1100px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-    }
-
-    .grid img {
-      width: 100%;
-      border-radius: 10px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StoneShine Studio</title>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f6f6f6;
+}
+header{
+  background:#000;
+  color:#fff;
+  padding:20px;
+  text-align:center;
+  font-size:28px;
+  font-weight:bold;
+}
+.section{
+  padding:40px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+.section h2{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:30px;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
+.gallery img{
+  width:100%;
+  border-radius:10px;
+  background:#ddd;
+}
+.button{
+  display:inline-block;
+  margin-top:20px;
+  padding:12px 24px;
+  background:black;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-size:16px;
+}
+footer{
+  background:#000;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+</style>
 </head>
-
 <body>
+<header>
+  StoneShine Studio
+</header>
 
-  <h1>StoneShine Studio</h1>
+<!-- Jewellery Photo Editing -->
+<section class="section">
+  <h2>Jewellery Photo Editing</h2>
+  <div class="gallery">
+    <img src="images/rings.png" alt="Rings" />
+    <img src="images/necklace.png" alt="Necklace" />
+    <img src="images/earrings.png" alt="Earrings" />
+    <img src="images/bangles.png" alt="Bangles" />
+  </div>
+  <a class="button" href="#">View More</a>
+</section>
 
-  <!-- SERVICES SECTION -->
-  <section id="services">
-    <h2>Our Services</h2>
+<!-- Background Replacement -->
+<section class="section">
+  <h2>Background Replacement</h2>
+  <div class="gallery">
+    <img src="images/placeholder.png" alt="Placeholder" />
+    <img src="images/placeholder.png" alt="Placeholder" />
+    <img src="images/placeholder.png" alt="Placeholder" />
+  </div>
+  <a class="button" href="#">View More</a>
+</section>
 
-    <!-- SERVICE 1 -->
-    <div class="service-item">
-      <button class="service-header">Jewellery Photo Editing</button>
-      <div class="service-content">
-        <p>
-          • High-end jewellery retouching<br>
-          • Shine enhancement<br>
-          • Color correction<br>
-          • Dust removal<br>
-          • Polki & diamond clarity boost
-        </p>
-        <div class="service-images">
-          <img src="assets/service1a.jpg">
-          <img src="assets/service1b.jpg">
-        </div>
-      </div>
-    </div>
+<!-- Meta Ads / Reels Editing -->
+<section class="section">
+  <h2>Reels & Meta Ads Editing</h2>
+  <div class="gallery">
+    <img src="images/placeholder.png" alt="Placeholder" />
+    <img src="images/placeholder.png" alt="Placeholder" />
+    <img src="images/placeholder.png" alt="Placeholder" />
+  </div>
+  <a class="button" href="#">View More</a>
+</section>
 
-    <!-- SERVICE 2 -->
-    <div class="service-item">
-      <button class="service-header">Reel Editing</button>
-      <div class="service-content">
-        <p>
-          • Fast trendy reels<br>
-          • Smooth transitions<br>
-          • Viral hook style<br>
-          • Clean text animations
-        </p>
-        <div class="service-images">
-          <img src="assets/reel1.jpg">
-          <img src="assets/reel2.jpg">
-        </div>
-      </div>
-    </div>
-
-    <!-- SERVICE 3 -->
-    <div class="service-item">
-      <button class="service-header">Meta Ads & Promo Videos</button>
-      <div class="service-content">
-        <p>
-          • High converting jewellery ads<br>
-          • Motion promo videos<br>
-          • Clean typography<br>
-          • Premium brand feel
-        </p>
-        <div class="service-images">
-          <img src="assets/meta1.jpg">
-        </div>
-      </div>
-    </div>
-
-    <!-- SERVICE 4 -->
-    <div class="service-item">
-      <button class="service-header">Instagram Content Creation</button>
-      <div class="service-content">
-        <p>
-          • Daily posts<br>
-          • Highlight covers<br>
-          • Story templates<br>
-          • Jewellery brand-focused design
-        </p>
-        <div class="service-images">
-          <img src="assets/insta1.jpg">
-        </div>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <h2>Portfolio</h2>
-    <div class="grid">
-      <img src="assets/p1.jpg">
-      <img src="assets/p2.jpg">
-      <img src="assets/p3.jpg">
-      <img src="assets/p4.jpg">
-    </div>
-  </section>
-
-  <!-- SCRIPT -->
-  <script>
-    document.querySelectorAll(".service-header").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const content = btn.nextElementSibling;
-
-        document.querySelectorAll(".service-content").forEach(c => {
-          if (c !== content) c.style.maxHeight = null;
-        });
-
-        if (content.style.maxHeight) {
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    });
-  </script>
-
+<footer>
+  © 2025 StoneShine Studio. All Rights Reserved.
+</footer>
 </body>
 </html>
