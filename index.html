@@ -7,151 +7,190 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #f8f8f8;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #fff;
         }
 
         header {
-            background: black;
-            padding: 18px;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #111;
+            border-bottom: 1px solid #222;
         }
 
-        header h1 {
-            color: white;
-            margin: 0;
-            font-size: 26px;
+        .brand {
+            font-size: 22px;
+            font-weight: 700;
+            color: #c59b4b;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
         }
 
         h2 {
-            margin-top: 50px;
-            font-size: 30px;
+            margin-top: 40px;
+            color: #c59b4b;
+            font-size: 26px;
+        }
+
+        .service-item {
+            background: #111;
+            border: 1px solid #222;
+            margin: 15px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .service-header {
+            width: 100%;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 15px;
+            font-size: 18px;
+            text-align: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .service-content {
+            display: none;
+            padding: 15px;
+            background: #131313;
+        }
+
+        .service-images {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .service-images img {
+            width: 180px;
+            border-radius: 10px;
         }
 
         .gallery {
             display: flex;
-            justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin: 30px auto;
-            max-width: 1100px;
+            margin-top: 20px;
         }
 
-        .card {
-            background: white;
-            width: 240px;
-            padding: 12px;
+        .gallery img {
+            width: 220px;
             border-radius: 12px;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .btn {
-            background: black;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 8px;
-            border-radius: 6px;
-            cursor: pointer;
+            border: 1px solid #222;
         }
 
         /* WhatsApp Button */
         .whatsapp {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background: #25D366;
             color: white;
-            padding: 12px 20px;
-            border-radius: 50px;
+            padding: 15px 17px;
+            border-radius: 50%;
+            font-size: 26px;
             text-decoration: none;
-            font-size: 18px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
     </style>
-
 </head>
+
 <body>
 
 <header>
-    <h1>StoneShine Studio</h1>
+    <div class="brand">StoneShine Studio</div>
+    <a href="https://wa.me/919352798194" style="color:#c59b4b; text-decoration:none; font-weight:600;">WhatsApp</a>
 </header>
 
+<div class="container">
 
-<!-- Jewellery Editing -->
-<h2>Jewellery Photo Editing</h2>
-<div class="gallery">
-    <div class="card">
+    <h2>Our Services</h2>
+
+    <!-- Jewellery Editing -->
+    <div class="service-item">
+        <button class="service-header">Jewellery Photo Editing</button>
+        <div class="service-content">
+            <p>High-end jewellery retouching • Shine enhancement • Diamond/Polki clarity boost.</p>
+            <div class="service-images">
+                <img src="images/rings.png">
+                <img src="images/necklace.png">
+                <img src="images/earrings.png">
+                <img src="images/bangles.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Reel Editing -->
+    <div class="service-item">
+        <button class="service-header">Reel Editing</button>
+        <div class="service-content">
+            <p>Trendy reels • Transitions • Text animation • Smooth jewellery pans.</p>
+            <div class="service-images">
+                <img src="images/reel1.png">
+                <img src="images/reel2.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Meta Ads -->
+    <div class="service-item">
+        <button class="service-header">Meta Ads & Promo Videos</button>
+        <div class="service-content">
+            <p>High converting jewellery ads • Motion graphics • Premium brand look.</p>
+            <div class="service-images">
+                <img src="images/ad1.png">
+                <img src="images/ad2.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- Instagram Content -->
+    <div class="service-item">
+        <button class="service-header">Instagram Content Creation</button>
+        <div class="service-content">
+            <p>Carousel posts • Stories • Highlights • Jewellery brand-focused design.</p>
+            <div class="service-images">
+                <img src="images/content1.png">
+                <img src="images/content2.png">
+            </div>
+        </div>
+    </div>
+
+    <h2>Portfolio</h2>
+    <div class="gallery">
         <img src="images/rings.png">
-        <button class="btn">View More</button>
-    </div>
-
-    <div class="card">
         <img src="images/necklace.png">
-        <button class="btn">View More</button>
-    </div>
-
-    <div class="card">
         <img src="images/earrings.png">
-        <button class="btn">View More</button>
-    </div>
-
-    <div class="card">
         <img src="images/bangles.png">
-        <button class="btn">View More</button>
     </div>
+
 </div>
 
+<!-- Floating WhatsApp Button -->
+<a class="whatsapp" href="https://wa.me/919352798194">💬</a>
 
-<!-- Background Replacement -->
-<h2>Background Replacement</h2>
-<div class="gallery">
-    <div class="card">
-        <img src="images/placeholder.png">
-        <button class="btn">View More</button>
-    </div>
-    <div class="card">
-        <img src="images/placeholder.png">
-        <button class="btn">View More</button>
-    </div>
-    <div class="card">
-        <img src="images/placeholder.png">
-        <button class="btn">View More</button>
-    </div>
-</div>
+<script>
+    const headers = document.querySelectorAll(".service-header");
 
-
-<!-- Reels Editing -->
-<h2>Reels & Meta Ads Editing</h2>
-<div class="gallery">
-    <div class="card">
-        <img src="images/placeholder.png">
-        <button class="btn">View More</button>
-    </div>
-</div>
-
-
-<!-- Instagram Content -->
-<h2>Instagram Content Designing</h2>
-<div class="gallery">
-    <div class="card">
-        <img src="images/placeholder.png">
-        <button class="btn">View More</button>
-    </div>
-</div>
-
-
-<!-- WhatsApp Button -->
-<a class="whatsapp" 
-   href="https://wa.me/9352798194?text=Hello%20StoneShine%20Studio">
-   WhatsApp
-</a>
+    headers.forEach(h => {
+        h.addEventListener("click", () => {
+            const content = h.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+    });
+</script>
 
 </body>
 </html>
