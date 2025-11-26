@@ -7,64 +7,118 @@
 
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: #fafafa;
-            text-align: center;
+            background: #f6f2ff;
+            color: #222;
         }
 
         h1 {
-            font-size: 36px;
-            margin-top: 30px;
-            font-weight: 700;
+            font-size: 42px;
+            margin-top: 40px;
+            font-weight: 800;
+            background: linear-gradient(45deg, #8A2BE2, #FF1493);
+            -webkit-background-clip: text;
+            color: transparent;
         }
+
         h2 {
-            font-size: 30px;
+            font-size: 32px;
             font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(45deg, #FF7F50, #FF1493);
+            -webkit-background-clip: text;
+            color: transparent;
         }
 
         p {
-            max-width: 850px;
+            max-width: 900px;
             margin: auto;
-            font-size: 17px;
+            font-size: 18px;
             line-height: 1.6;
-            color: #444;
+            color: #333;
         }
 
+        /* Section background with premium gradients */
         .section {
-            padding: 60px 25px;
-            border-bottom: 1px solid #e5e5e5;
+            padding: 70px 25px;
+            margin: 50px 0;
+            border-radius: 25px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            background: linear-gradient(135deg, #ffffffaa, #f3d9ff);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
         }
 
-        /* Grid */
+        /* Card Grid */
         .grid {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
             flex-wrap: wrap;
-            margin-top: 30px;
-        }
-        .grid img {
-            width: 260px;
-            height: 260px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            margin-top: 40px;
         }
 
+        /* Creative photo cards */
+        .grid img {
+            width: 270px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+        .grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        }
+
+        /* Creative Buttons */
         .btn {
-            padding: 12px 25px;
-            background: black;
+            padding: 14px 28px;
+            background: linear-gradient(45deg, #FF1493, #8A2BE2);
             color: white;
-            border-radius: 6px;
-            margin-top: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
             display: inline-block;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
         }
 
-        /* WhatsApp Button */
+        /* Creative Points (icons + luxury feel) */
+        .points {
+            max-width: 750px;
+            margin: 35px auto;
+            text-align: left;
+            font-size: 18px;
+            color: #333;
+            list-style: none;
+            padding: 0;
+        }
+
+        .points li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .points li::before {
+            content: "✨";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Floating WhatsApp button */
         .whatsapp {
             position: fixed;
             bottom: 22px;
@@ -77,39 +131,27 @@
             text-decoration: none;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
-
-        /* Points */
-        .points {
-            max-width: 700px;
-            margin: 25px auto;
-            text-align: left;
-            font-size: 17px;
-            color: #333;
-        }
-        .points li {
-            margin-bottom: 10px;
-        }
     </style>
 </head>
 <body>
 
 <h1>StoneShine Studio</h1>
-<p>Premium Jewellery Editing • Reels Creation • Meta Ads Designing</p>
+<p>Your Premium Partner for Jewellery Editing & Creative Media</p>
 
-<!-- 1: Jewellery Editing -->
+<!-- 1 — Jewellery Editing -->
 <div class="section">
     <h2>Jewellery Photo Editing</h2>
     <p>
-        We provide high-end photo retouching for Gold, Diamond, Polki, Kundan & Color Stone jewellery.
-        Every photo is enhanced with precision to make it look premium and high-value for brands, catalogs & social media.
+        High-end premium jewellery retouching for Gold, Diamond, Polki & Kundan jewellery.
+        Our editing enhances shine, clarity & luxury appeal for catalogs and Instagram.
     </p>
 
     <ul class="points">
-        <li>✨ High-end shine & sparkle enhancement</li>
-        <li>🎯 Color correction for stones, gold, diamonds & polki</li>
-        <li>🪞 Reflection, shadow & highlight perfection</li>
-        <li>🧼 Dust, spots, scratches & camera noise removal</li>
-        <li>📸 Perfect cropping & composition for ecommerce</li>
+        <li>High-end Shine & Sparkle Enhancement</li>
+        <li>Diamond Clarity Boost + Color Correction</li>
+        <li>Polki & Ruby natural tone enhancement</li>
+        <li>Spotless cleaning + scratch removal</li>
+        <li>Premium shadows & reflections</li>
     </ul>
 
     <div class="grid">
@@ -119,23 +161,23 @@
         <img src="images/bangles.png">
     </div>
 
-    <a class="btn" href="#">See Full Editing Work</a>
+    <a class="btn" href="#">View Complete Editing Work</a>
 </div>
 
-<!-- 2: Background Replacement -->
-<div class="section">
+<!-- 2 — Background Replacement -->
+<div class="section" style="background: linear-gradient(135deg,#fff6f6,#ffe1ff);">
     <h2>Background Replacement</h2>
     <p>
-        We create premium backgrounds that instantly uplift your jewellery visuals. 
-        Perfect for websites, catalogs, exhibitions & Instagram spotlight posts.
+        Transform jewellery visuals with luxury backgrounds designed for premium brands.
+        Crisp, clean and perfectly color-balanced.
     </p>
 
     <ul class="points">
-        <li>⚪ Clean pure white background</li>
-        <li>⚫ Luxury black & matte black look</li>
-        <li>🌟 Gradient & glamour-style backgrounds</li>
-        <li>🎨 Custom brand-styled color backgrounds</li>
-        <li>🖼 Shadow creation for real premium feel</li>
+        <li>Luxury White & Matte Black Backgrounds</li>
+        <li>Gradient Color Premium Presentation</li>
+        <li>Brand Color Background Designing</li>
+        <li>Shadow + Reflection Creation</li>
+        <li>Catalog-Ready Cropping & Framing</li>
     </ul>
 
     <div class="grid">
@@ -144,23 +186,22 @@
         <img src="images/bg3.png">
     </div>
 
-    <a class="btn" href="#">See Background Styles</a>
+    <a class="btn" href="#">See Background Concepts</a>
 </div>
 
-<!-- 3: Reels Editing -->
-<div class="section">
+<!-- 3 — Reels / Meta Ads -->
+<div class="section" style="background: linear-gradient(135deg,#e4f1ff,#ffe7ff);">
     <h2>Reels & Meta Ads Editing</h2>
     <p>
-        Get modern, classy & conversion-focused jewellery reels. 
-        We specialize in smooth transitions, premium motion graphics, and brand-focused storytelling.
+        Get scroll-stopping jewellery reels with clean typography, transitions & brand-focused storytelling.
     </p>
 
     <ul class="points">
-        <li>🎬 Instagram Reels with smooth transitions</li>
-        <li>🔥 High-engagement Ads for Meta (FB + IG)</li>
-        <li>✨ Cinematic shots, zooms & clean typography</li>
-        <li>🎶 Trend-based music syncing</li>
-        <li>📱 Export-ready for all platforms</li>
+        <li>Instagram Reels (Shop-Ready & Aesthetic)</li>
+        <li>Meta Ads Editing for High Conversion</li>
+        <li>Premium Transitions + Zoom Cinematics</li>
+        <li>Trending Music Sync</li>
+        <li>Export in Ultra HD Quality</li>
     </ul>
 
     <div class="grid">
@@ -168,7 +209,7 @@
         <img src="images/reel2.png">
     </div>
 
-    <a class="btn" href="#">See Reels Portfolio</a>
+    <a class="btn" href="#">Watch Reels Portfolio</a>
 </div>
 
 <!-- WhatsApp -->
