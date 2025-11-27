@@ -214,8 +214,66 @@
             <div class="row">
               <p>Create short-format reels and promos: transitions, text animation, speed-ramping, hooks and audio sync. Ready for Instagram & Facebook formats.</p>
               <div class="service-images">
-                <img src="images/reel1.png" alt="Reel sample" loading="lazy">
-                <img src="images/reel2.png" alt="Reel sample" loading="lazy">
+<style>
+/* --- Animation for videos --- */
+.reel-video {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s ease forwards;
+}
+
+.reel-video:nth-child(1) { animation-delay: 0.2s; }
+.reel-video:nth-child(2) { animation-delay: 0.4s; }
+.reel-video:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
+
+<article class="service-item">
+  <div class="service-head" role="tab" tabindex="0" aria-expanded="false">
+    <div class="service-title">Reel Editing</div>
+    <div class="service-short">Trendy • Fast • Engaging</div>
+  </div>
+
+  <div class="service-body">
+    <div class="row">
+      <p>Create short-format reels and promos with smooth transitions, hooks, text animation and audio sync. Ready for Instagram & Facebook formats.</p>
+
+      <div class="service-images" style="display:flex; gap:20px; flex-wrap:wrap;">
+
+        <video src="videos/reel1.mp4" 
+               controls preload="none" 
+               class="reel-video"
+               style="width:30%; border-radius:12px;">
+        </video>
+
+        <video src="videos/reel2.mp4" 
+               controls preload="none" 
+               class="reel-video"
+               style="width:30%; border-radius:12px;">
+        </video>
+
+        <video src="videos/reel3.mp4" 
+               controls preload="none" 
+               class="reel-video"
+               style="width:30%; border-radius:12px;">
+        </video>
+
+      </div>
+    </div>
+  </div>
+</article>
+
               </div>
             </div>
           </div>
