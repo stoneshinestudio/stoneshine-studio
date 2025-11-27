@@ -19,20 +19,24 @@
       --glass: rgba(255,255,255,0.06);
       --glass-2: rgba(255,255,255,0.03);
       --radius:16px;
+      --max-width:1200px;
     }
     html{scroll-behavior:smooth}
     *{box-sizing:border-box}
     body{
-      margin:0;background:linear-gradient(180deg,#07050a 0%, #0f0b12 100%);
-      color:var(--muted);font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      background:linear-gradient(180deg,#07050a 0%, #0f0b12 100%);
+      color:var(--muted);
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
-    a{color:inherit}
+    a{color:inherit;text-decoration:none}
 
-    /* ---------- Header / Nav ---------- */
+    /* ---------- Topbar ---------- */
     .topbar{
       position:fixed;left:0;right:0;top:0;z-index:120;
-      display:flex;align-items:center;justify-content:space-between;padding:14px 24px;
+      display:flex;align-items:center;justify-content:space-between;padding:14px 22px;
       backdrop-filter: blur(6px);
       background: linear-gradient(180deg, rgba(10,8,12,0.6), rgba(10,8,12,0.35));
       border-bottom:1px solid rgba(255,255,255,0.03);
@@ -44,61 +48,86 @@
       display:flex;align-items:center;justify-content:center;color:#091018;font-weight:800;font-size:18px;
       box-shadow:0 6px 20px rgba(197,155,75,0.08), inset 0 -4px 14px rgba(0,0,0,0.15);
     }
-    .brand-title{line-height:1}
     .brand-title .title{font-weight:700;color:var(--muted);font-size:15px}
     .brand-title .sub{font-size:12px;color:rgba(215,205,200,0.6)}
-
     nav{display:flex;gap:14px;align-items:center}
-    .nav-link{padding:8px 12px;border-radius:10px;font-size:14px;color:rgba(215,205,200,0.9);text-decoration:none}
+    .nav-link{padding:8px 12px;border-radius:10px;font-size:14px;color:rgba(215,205,200,0.9)}
     .nav-link:hover{background:var(--glass)}
-
-    .cta-hero{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:8px 12px;border-radius:10px;font-weight:700;color:white;text-decoration:none}
-    .menu-toggle{display:none}
+    .cta-hero{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:8px 12px;border-radius:10px;font-weight:700;color:white}
 
     /* ---------- Hero ---------- */
     .hero{
-      padding:120px 20px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 520px;gap:36px;align-items:center;
+      padding:120px 20px 40px;
+      max-width:var(--max-width);
+      margin:0 auto;
+      display:grid;grid-template-columns:1fr 520px;gap:36px;align-items:center;
     }
     .eyebrow{color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:8px}
     .hero h1{font-family:Playfair Display, serif;font-size:44px;margin:0 0 14px;background:linear-gradient(45deg,var(--accent2),var(--gold));-webkit-background-clip:text;color:transparent}
     .lead{color:rgba(215,205,200,0.9);font-size:16px;line-height:1.6;margin-bottom:18px}
     .hero-cta{display:flex;gap:12px;align-items:center}
-    .btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 8px 30px rgba(138,43,226,0.12)}
-    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:12px 16px;border-radius:12px;color:var(--muted);text-decoration:none}
 
-    /* hero visual */
-    .hero-visual{display:flex;gap:12px;justify-content:center;align-items:center}
     .hero-visual .card{width:100%;max-width:420px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border:1px solid rgba(255,255,255,0.04)}
     .hero-visual img{width:100%;display:block;border-radius:12px}
 
-    /* ---------- Sections ---------- */
-    .container{max-width:1200px;margin:30px auto;padding:0 20px}
+    /* ---------- Layout ---------- */
+    .container{max-width:var(--max-width);margin:30px auto;padding:0 20px}
     section{margin:40px 0;padding:30px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));border:1px solid rgba(255,255,255,0.03)}
     h2.section-title{color:var(--gold);margin:0 0 12px;font-size:26px}
 
     /* services accordion */
     .accordion{display:grid;gap:12px}
-    .service-item{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
-    .service-head{background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:14px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+    .service-item{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005))}
+    .service-head{padding:14px 16px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))}
     .service-title{font-weight:700}
-    .service-body{padding:18px;display:none;animation:fadeIn .35s ease}
+    .service-body{padding:18px;display:none;}
     .service-body .row{display:flex;gap:18px;flex-wrap:wrap}
     .service-body p{flex:1;margin:0;color:rgba(215,205,200,0.95)}
     .service-images img{width:160px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-    /* portfolio grid + filters */
+    /* ---------- Reels (new) ---------- */
+    .reels-wrapper { text-align:center; padding:18px 0 2px 0; }
+    .reel-grid {
+      margin-top:20px;
+      display:flex;
+      gap:22px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .reel-card {
+      width:260px;
+      border-radius:18px;
+      padding:10px;
+      background:rgba(255,255,255,0.03);
+      border:2px solid transparent;
+      background-image: linear-gradient(#0f0f0f,#0f0f0f), linear-gradient(45deg,#ff6bdc,#6bd5ff,#ffd86b);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      transition: transform .32s ease, box-shadow .32s ease;
+      cursor:pointer;
+      overflow:hidden;
+    }
+    .reel-card:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(107,60,170,0.09);}
+    .reel-card video { width:100%; border-radius:12px; display:block; background:#000; }
+
+    /* animation */
+    .reel-video { opacity:0; transform:translateY(18px); animation:reelFade .7s ease forwards; }
+    .reel-video.delay-1{ animation-delay:0.18s }
+    .reel-video.delay-2{ animation-delay:0.36s }
+    .reel-video.delay-3{ animation-delay:0.54s }
+    @keyframes reelFade { from { opacity:0; transform:translateY(18px) } to { opacity:1; transform:none } }
+
+    /* portfolio + grid */
     .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
     .chip{padding:8px 12px;border-radius:999px;background:var(--glass);cursor:pointer;font-weight:600}
     .chip.active{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
-
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
     .grid-card{position:relative;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);cursor:pointer}
     .grid-card img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .35s ease}
     .grid-card:hover img{transform:scale(1.03)}
     .grid-card .meta{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.45);padding:8px 10px;border-radius:8px;font-size:13px;color:#fff}
 
-    /* lightbox modal */
+    /* modal */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.8));z-index:2000}
     .modal .inner{max-width:1000px;width:95%;border-radius:12px;overflow:hidden}
     .modal img{width:100%;height:auto;display:block}
@@ -108,8 +137,6 @@
     .price-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
     .price-card h3{margin:0 0 8px;color:var(--gold)}
     .price-card .cost{font-size:24px;font-weight:800}
-    .features{margin:12px 0;padding:0;list-style:none}
-    .features li{margin:8px 0;color:rgba(215,205,200,0.95)}
 
     /* contact */
     .contact-grid{display:grid;grid-template-columns:2fr 1fr;gap:18px}
@@ -118,18 +145,20 @@
 
     /* footer / utilities */
     footer{padding:28px;text-align:center;color:rgba(255,255,255,0.6);font-size:14px}
-    .top{position:fixed;right:18px;bottom:110px;background:rgba(255,255,255,0.03);padding:10px;border-radius:12px;cursor:pointer}
+    .top{position:fixed;right:18px;bottom:110px;background:rgba(255,255,255,0.03);padding:10px;border-radius:12px;cursor:pointer;display:none}
 
     /* responsive */
     @media(max-width:980px){
       .hero{grid-template-columns:1fr; padding-top:100px}
       .contact-grid{grid-template-columns:1fr}
       .service-images img{width:120px}
+      .reel-card{width:42%}
     }
     @media(max-width:600px){
       .topbar{padding:10px}
       .logo{width:44px;height:44px}
       .brand-title .title{font-size:14px}
+      .reel-card{width:100%}
     }
   </style>
 </head>
@@ -155,10 +184,10 @@
   </header>
 
   <!-- Hero -->
-  <main class="hero" role="main">
+  <main class="hero" role="main" aria-labelledby="hero-title">
     <div>
       <div class="eyebrow">Premium Jewellery Visuals</div>
-      <h1>We craft luxury visuals that sell — photos, reels & ads</h1>
+      <h1 id="hero-title">We craft luxury visuals that sell — photos, reels & ads</h1>
       <p class="lead">StoneShine Studio (Akshay Barala) — specialised jewellery photo editing for gold, diamond, polki and colour stone jewellery. Fast turnaround, catalogue-ready files and retail-ready reels.</p>
       <div class="hero-cta">
         <a class="btn" href="#contact">Request Quote</a>
@@ -187,6 +216,7 @@
       <h2 id="services-title" class="section-title">Services</h2>
 
       <div class="accordion" role="tablist">
+
         <article class="service-item" role="article">
           <div class="service-head" role="tab" tabindex="0" aria-expanded="false">
             <div class="service-title">Jewellery Photo Editing</div>
@@ -205,76 +235,35 @@
           </div>
         </article>
 
-        <article class="service-item">
+        <!-- REEL EDITING (clean, animated, video cards) -->
+        <article class="service-item" id="reels" role="article">
           <div class="service-head" role="tab" tabindex="0" aria-expanded="false">
             <div class="service-title">Reel Editing</div>
             <div class="service-short">Trendy • Fast • Engaging</div>
           </div>
-          <div class="service-body">
-            <div class="row">
-              <p>Create short-format reels and promos: transitions, text animation, speed-ramping, hooks and audio sync. Ready for Instagram & Facebook formats.</p>
-              <div class="service-images">
-<style>
-/* --- Animation for videos --- */
-.reel-video {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
-}
 
-.reel-video:nth-child(1) { animation-delay: 0.2s; }
-.reel-video:nth-child(2) { animation-delay: 0.4s; }
-.reel-video:nth-child(3) { animation-delay: 0.6s; }
+          <div class="service-body" role="region">
+            <div class="row" style="flex-direction:column;gap:18px">
+              <p style="margin-bottom:8px">Create short-format reels and promos with smooth transitions, hooks, text animation and audio sync. Ready for Instagram & Facebook formats.</p>
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-</style>
+              <div class="reels-wrapper" aria-live="polite">
+                <div class="reel-grid" role="list">
 
+                  <div class="reel-card" role="listitem" title="Reel 1">
+                    <video class="reel-video delay-1" src="videos/reel1.mp4" controls preload="none" playsinline></video>
+                  </div>
 
-<article class="service-item">
-  <div class="service-head" role="tab" tabindex="0" aria-expanded="false">
-    <div class="service-title">Reel Editing</div>
-    <div class="service-short">Trendy • Fast • Engaging</div>
-  </div>
+                  <div class="reel-card" role="listitem" title="Reel 2">
+                    <video class="reel-video delay-2" src="videos/reel2.mp4" controls preload="none" playsinline></video>
+                  </div>
 
-  <div class="service-body">
-    <div class="row">
-      <p>Create short-format reels and promos with smooth transitions, hooks, text animation and audio sync. Ready for Instagram & Facebook formats.</p>
+                  <div class="reel-card" role="listitem" title="Reel 3">
+                    <video class="reel-video delay-3" src="videos/reel3.mp4" controls preload="none" playsinline></video>
+                  </div>
 
-      <div class="service-images" style="display:flex; gap:20px; flex-wrap:wrap;">
-
-        <video src="videos/reel1.mp4" 
-               controls preload="none" 
-               class="reel-video"
-               style="width:30%; border-radius:12px;">
-        </video>
-
-        <video src="videos/reel2.mp4" 
-               controls preload="none" 
-               class="reel-video"
-               style="width:30%; border-radius:12px;">
-        </video>
-
-        <video src="videos/reel3.mp4" 
-               controls preload="none" 
-               class="reel-video"
-               style="width:30%; border-radius:12px;">
-        </video>
-
-      </div>
-    </div>
-  </div>
-</article>
-
+                </div>
               </div>
+
             </div>
           </div>
         </article>
@@ -310,6 +299,7 @@
             </div>
           </div>
         </article>
+
       </div>
     </section>
 
@@ -412,8 +402,8 @@
   </div><!-- container -->
 
   <!-- floating utilities -->
-  <a class="whatsapp" href="https://wa.me/919352798194" aria-label="WhatsApp">💬</a>
-  <div class="top" id="backTop" title="Back to top" style="display:none">↑</div>
+  <a class="whatsapp" href="https://wa.me/919352798194" aria-label="WhatsApp" style="position:fixed;right:18px;bottom:18px;font-size:26px">💬</a>
+  <div class="top" id="backTop" title="Back to top">↑</div>
 
   <!-- lightbox modal -->
   <div id="lightbox" class="modal" role="dialog" aria-modal="true" aria-label="Image preview">
@@ -436,8 +426,11 @@
     function toggleService(head){
       const open = head.getAttribute('aria-expanded') === 'true';
       // close all
-      document.querySelectorAll('.service-head').forEach(h=>{h.setAttribute('aria-expanded','false'); h.nextElementSibling.style.display = 'none'});
-      if(!open){ head.setAttribute('aria-expanded','true'); head.nextElementSibling.style.display='block'; head.nextElementSibling.querySelectorAll('img').forEach(img=>img.style.opacity=1) }
+      document.querySelectorAll('.service-head').forEach(h=>{h.setAttribute('aria-expanded','false'); if(h.nextElementSibling) h.nextElementSibling.style.display = 'none'});
+      if(!open){
+        head.setAttribute('aria-expanded','true');
+        if(head.nextElementSibling) head.nextElementSibling.style.display='block';
+      }
     }
 
     /* ---------- Portfolio filter ---------- */
@@ -475,11 +468,23 @@
     /* ---------- Intersection animations (simple reveal) ---------- */
     const io = new IntersectionObserver(entries=>{
       entries.forEach(en=>{
-        if(en.isIntersecting){ en.target.style.transform='none'; en.target.style.opacity=1; io.unobserve(en.target) }
+        if(en.isIntersecting){
+          en.target.style.transform='none';
+          en.target.style.opacity=1;
+          io.unobserve(en.target);
+        }
       })
     }, {threshold:0.12});
     document.querySelectorAll('section, .grid-card, .service-item').forEach(el=>{
       el.style.opacity=0; el.style.transform='translateY(10px)'; io.observe(el);
+    });
+
+    /* ---------- Reel videos: ensure animations trigger on load ---------- */
+    document.querySelectorAll('.reel-video').forEach(v=>{
+      // when metadata loads, add a tiny timeout to allow CSS animation to play
+      v.addEventListener('loadedmetadata', ()=> { setTimeout(()=> v.classList.add('visible'), 30) });
+      // optional: pause videos until user interacts on mobile to save bandwidth
+      if(/Mobi|Android/i.test(navigator.userAgent)) v.pause();
     });
 
     /* ---------- Contact form (mailto fallback) ---------- */
@@ -492,13 +497,9 @@
       if(!name||!email||!phone||!msg){ alert('Please fill all fields'); return false; }
       const subject = encodeURIComponent('New enquiry from website — '+name);
       const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${msg}`);
-      // Try to open user's email client
       window.location.href = `mailto:stoneshinestudio@example.com?subject=${subject}&body=${body}`;
       return false;
     }
-
-    /* ---------- keyboard escape closes modal ---------- */
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ lightbox.style.display='none' } });
 
     /* ---------- Lazy fallback for older browsers ---------- */
     document.querySelectorAll('img[loading]').forEach(img=>{
@@ -506,6 +507,9 @@
       const src = img.dataset.src || img.src;
       img.src = src;
     });
+
+    /* ---------- keyboard escape closes modal ---------- */
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape'){ lightbox.style.display='none' } });
 
   </script>
 </body>
