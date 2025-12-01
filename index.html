@@ -1,210 +1,1282 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StoneShine Studio — Premium Jewellery Editing</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StoneShineStudio | Professional Jewelry Editing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== RESET & BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-<style>
-    body {
-        margin: 0;
-        font-family: Poppins, sans-serif;
-        background: #0d0d0d;
-        color: #fff;
-    }
+        :root {
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --light-gold: #F5E8AA;
+            --diamond: #E8F4FF;
+            --dark-bg: #0F0F1A;
+            --light-bg: #1A1A2E;
+            --text-light: #FFFFFF;
+            --text-gray: #CCCCCC;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --transition: all 0.3s ease;
+        }
 
-    /* HEADER */
-    header {
-        text-align: center;
-        padding: 28px 10px;
-        font-size: 36px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        background: linear-gradient(90deg, #ffdd99, #ffb300);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    /* HERO SECTION */
-    .hero {
-        text-align: center;
-        padding: 70px 20px;
-        background: radial-gradient(circle at top, #1b1b1b, #000);
-    }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-    .hero h1 {
-        font-size: 48px;
-        background: linear-gradient(90deg, #ffd479, #ff9d00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-    .hero p { 
-        font-size: 18px;
-        margin-top: 10px;
-        color: #ccc;
-    }
+        section {
+            padding: 100px 0;
+        }
 
-    /* SERVICES SECTION */
-    .section-title {
-        text-align: center;
-        font-size: 34px;
-        margin-top: 60px;
-        font-weight: 600;
-        background: linear-gradient(90deg, #ffdd99, #ffae00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
 
-    .services-container {
-        max-width: 1200px;
-        margin: 50px auto;
-        padding: 20px;
-        display: grid;
-        gap: 40px;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--text-light);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
 
-    .service-box {
-        background: #111;
-        padding: 20px;
-        border-radius: 16px;
-        text-align: center;
-        border: 1px solid rgba(255,170,0,0.3);
-        box-shadow: 0 0 20px rgba(255,170,0,0.1);
-        transition: 0.3s;
-    }
+        .section-title h2 span {
+            color: var(--gold);
+        }
 
-    .service-box:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 30px rgba(255,170,0,0.4);
-    }
+        .section-title p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
 
-    .service-box img {
-        width: 90px;
-        margin-bottom: 12px;
-    }
+        .gold-line {
+            height: 4px;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 20px auto;
+        }
 
-    .service-box h3 {
-        margin-bottom: 5px;
-        color: #ffbf38;
-    }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--dark-bg);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
 
-    .service-box p {
-        color: #ccc;
-        font-size: 14px;
-        line-height: 22px;
-    }
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+            background: linear-gradient(135deg, var(--dark-gold), var(--gold));
+        }
 
-    /* REELS SECTION */
-    .reel-section {
-        margin-top: 80px;
-        padding: 40px 20px 80px;
-        background: radial-gradient(circle at center, #1a1a1a, #000);
-    }
+        /* ===== HEADER & NAVBAR ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
 
-    .reel-grid {
-        max-width: 1200px;
-        margin: auto;
-        display: grid;
-        gap: 35px;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .reel-card {
-        position: relative;
-        border-radius: 18px;
-        padding: 6px;
-        background: linear-gradient(135deg, rgba(255,200,80,0.4), rgba(255,150,0,0.1));
-        box-shadow: 0 0 20px rgba(255,170,0,0.3);
-        transition: 0.4s ease;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .reel-card:hover {
-        transform: scale(1.06);
-        box-shadow: 0 0 35px rgba(255,180,0,0.6);
-    }
+        .logo-icon {
+            font-size: 2.2rem;
+            color: var(--gold);
+        }
 
-    video {
-        width: 100%;
-        border-radius: 14px;
-    }
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--text-light);
+            background: linear-gradient(90deg, var(--gold), var(--light-gold));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 1px;
+        }
 
-    /* FOOTER */
-    footer {
-        margin-top: 70px;
-        padding: 35px;
-        text-align: center;
-        color: #888;
-        font-size: 14px;
-    }
-</style>
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--gold);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(15, 15, 26, 0.9), rgba(15, 15, 26, 0.9)), url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--text-gray);
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--dark-bg);
+        }
+
+        /* ===== PORTFOLIO GALLERY ===== */
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 50px;
+        }
+
+        .filter-btn {
+            background: var(--light-bg);
+            color: var(--text-gray);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gold);
+            color: var(--dark-bg);
+            border-color: var(--gold);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(15, 15, 26, 0.9));
+            padding: 30px 20px 20px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* ===== VIDEO SHOWCASE ===== */
+        .video-showcase {
+            background: var(--light-bg);
+        }
+
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .video-item {
+            background: var(--dark-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .video-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .video-thumbnail {
+            height: 200px;
+            width: 100%;
+            background: linear-gradient(45deg, var(--dark-bg), var(--light-bg));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-thumbnail i {
+            font-size: 4rem;
+            color: var(--gold);
+            z-index: 2;
+        }
+
+        .video-thumbnail::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+
+        .video-info {
+            padding: 25px;
+        }
+
+        .video-info h3 {
+            color: var(--text-light);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        /* ===== SERVICES ===== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light-bg);
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--text-light);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .about-highlights {
+            margin-top: 30px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .highlight-item i {
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--gold);
+            color: var(--dark-bg);
+            padding: 20px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* ===== CONTACT ===== */
+        .contact-section {
+            background: var(--light-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h3 {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail i {
+            font-size: 1.5rem;
+            color: var(--gold);
+            width: 50px;
+            height: 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--dark-bg);
+            color: var(--gold);
+            border-radius: 50%;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--dark-bg);
+            transform: translateY(-5px);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 18px 20px;
+            background: var(--dark-bg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        /* ===== WHATSAPP BUTTON ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-text {
+            position: absolute;
+            right: 80px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover .whatsapp-text {
+            opacity: 1;
+            right: 90px;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0A0A12;
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo h2 {
+            color: var(--text-light);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links h3, .footer-services h3 {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links ul, .footer-services ul {
+            list-style: none;
+        }
+
+        .footer-links li, .footer-services li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a, .footer-services li {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .credits {
+            color: var(--gold);
+            margin-top: 5px;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-container, .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 70px 0;
+            }
+        }
+
+        /* ===== LIGHTBOX MODAL ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-close:hover {
+            color: var(--gold);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
 </head>
-
 <body>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919352798194?text=Hello%20StoneShineStudio!%20I%20need%20jewelry%20editing%20services" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <div class="whatsapp-text">Message Now</div>
+    </a>
 
-<header>StoneShine Studio</header>
-
-<!-- HERO -->
-<section class="hero">
-    <h1>Premium Jewellery Editing Studio</h1>
-    <p>Gold • Diamond • Polki • Colourstone • Reels • Ads • Creative Editing</p>
-</section>
-
-<!-- SERVICES -->
-<h2 class="section-title">Our Services</h2>
-
-<div class="services-container">
-
-    <div class="service-box">
-        <img src="images/bangles.png">
-        <h3>Jewellery Retouching</h3>
-        <p>High-end retouching for gold, diamond, polki & colour stone jewellery.</p>
-    </div>
-
-    <div class="service-box">
-        <img src="images/earrings.png">
-        <h3>Creative Reels</h3>
-        <p>Trendy, fast & engaging reel editing for Instagram & Facebook.</p>
-    </div>
-
-    <div class="service-box">
-        <img src="images/necklace.png">
-        <h3>Meta Ads</h3>
-        <p>High-performing ad creatives that boost clicks & conversions.</p>
-    </div>
-
-    <div class="service-box">
-        <img src="images/rings.png">
-        <h3>Background Editing</h3>
-        <p>Premium e-commerce backgrounds in studio & luxury style.</p>
-    </div>
-
-</div>
-
-<!-- REELS -->
-<h2 class="section-title">Reel Showcase</h2>
-
-<section class="reel-section">
-
-    <div class="reel-grid">
-
-        <div class="reel-card">
-            <video src="videos/reel1.mp4" controls preload="none"></video>
+    <!-- Header -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>StoneShineStudio</h1>
+                    <p>JEWELRY EDITING EXPERTS</p>
+                </div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#videos">Videos</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+    </header>
 
-        <div class="reel-card">
-            <video src="videos/reel2.mp4" controls preload="none"></video>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Transforming <span>Jewelry</span> Through Digital Excellence</h1>
+            <p>Professional image editing, retouching, and video production for diamond, polki, gold jewelry. Showcase your products with stunning visuals that captivate customers.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn">View Our Work</a>
+                <a href="#contact" class="btn btn-outline">Get Quote</a>
+            </div>
         </div>
+    </section>
 
-        <div class="reel-card">
-            <video src="videos/reel3.mp4" controls preload="none"></video>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span>Portfolio</span></h2>
+                <p>Explore our collection of edited jewelry images across different categories</p>
+                <div class="gold-line"></div>
+            </div>
+            
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="rings">Rings</button>
+                <button class="filter-btn" data-filter="necklaces">Necklaces</button>
+                <button class="filter-btn" data-filter="bangles">Bangles</button>
+                <button class="filter-btn" data-filter="earrings">Earrings</button>
+            </div>
+            
+            <div class="gallery">
+                <!-- These images are placeholder - replace with your actual images -->
+                <div class="gallery-item fade-in" data-category="rings">
+                    <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diamond Ring Editing">
+                    <div class="gallery-overlay">
+                        <h3>Diamond Ring Retouching</h3>
+                        <p>Enhanced sparkle and clarity</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in" data-category="necklaces">
+                    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gold Necklace Editing">
+                    <div class="gallery-overlay">
+                        <h3>Gold Necklace Polishing</h3>
+                        <p>Color correction and shine enhancement</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in" data-category="bangles">
+                    <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bangle Editing">
+                    <div class="gallery-overlay">
+                        <h3>Polki Bangles Editing</h3>
+                        <p>Detail enhancement and background removal</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in" data-category="earrings">
+                    <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Earrings Editing">
+                    <div class="gallery-overlay">
+                        <h3>Diamond Earrings Retouch</h3>
+                        <p>Sparkle enhancement and color grading</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in" data-category="rings">
+                    <img src="https://images.unsplash.com/photo-1594576722512-582d5577dc56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wedding Ring Editing">
+                    <div class="gallery-overlay">
+                        <h3>Wedding Ring Enhancement</h3>
+                        <p>Professional editing for e-commerce</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in" data-category="necklaces">
+                    <img src="https://images.unsplash.com/photo-1596945076259-6c02c0fa8b7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Polki Necklace">
+                    <div class="gallery-overlay">
+                        <h3>Polki Necklace Editing</h3>
+                        <p>Detail work and texture enhancement</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <!-- Video Showcase -->
+    <section id="videos" class="video-showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>Video <span>Showcase</span></h2>
+                <p>Watch our professionally edited jewelry videos for social media and advertising</p>
+                <div class="gold-line"></div>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-item fade-in">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                    <div class="video-info">
+                        <h3>Jewelry Reel Editing</h3>
+                        <p>Short-form videos optimized for Instagram Reels and TikTok with trending audio and transitions.</p>
+                    </div>
+                </div>
+                
+                <div class="video-item fade-in">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <div class="video-info">
+                        <h3>Product Video Shoot</h3>
+                        <p>Professional jewelry videography with 360° views and macro detail shots.</p>
+                    </div>
+                </div>
+                
+                <div class="video-item fade-in">
+                    <div class="video-thumbnail">
+                        <i class="fas fa-ad"></i>
+                    </div>
+                    <div class="video-info">
+                        <h3>Meta Ads Editing</h3>
+                        <p>High-converting video ads for Facebook and Instagram with text overlays and CTAs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our <span>Services</span></h2>
+                <p>Comprehensive jewelry editing and digital marketing solutions</p>
+                <div class="gold-line"></div>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-crop-alt"></i>
+                    </div>
+                    <h3>Image Editing & Retouching</h3>
+                    <p>Professional jewelry photo editing, background removal, color correction, and detail enhancement.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Video Editing & Reels</h3>
+                    <p>Creating engaging jewelry videos for social media, product showcases, and advertisements.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-shooting-star"></i>
+                    </div>
+                    <h3>Diamond & Polki Enhancement</h3>
+                    <p>Specialized editing to bring out the sparkle and brilliance of diamonds and polki jewelry.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Meta Ads & Marketing</h3>
+                    <p>Creating high-converting ad creatives and campaigns for Facebook and Instagram.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Product Photography</h3>
+                    <p>Professional jewelry photography with proper lighting and composition for e-commerce.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-ring"></i>
+                    </div>
+                    <h3>Jewelry Catalog Design</h3>
+                    <p>Creating stunning digital catalogs and lookbooks for jewelry collections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About <span>StoneShineStudio</span></h2>
+                <p>Our journey in jewelry digital enhancement</p>
+                <div class="gold-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Bringing Jewelry to Life Through Digital Artistry</h3>
+                    <p>Based in the jewelry capital of India - Jaipur, Rajasthan, we specialize in transforming jewelry visuals through expert editing and creative design.</p>
+                    <p>With years of experience in the jewelry industry, we understand exactly what makes diamonds sparkle, gold shine, and jewelry captivate.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Specialized in Diamond, Polki, and Gold Jewelry</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fast turnaround without compromising quality</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Understanding of jewelry market trends</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Confidentiality and security of client products</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Jewelry Editing Workspace">
+                    <div class="image-badge">
+                        500+ Projects Delivered
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In <span>Touch</span></h2>
+                <p>Contact us for your jewelry editing needs</p>
+                <div class="gold-line"></div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Create Something Shining Together</h3>
+                    <p>Ready to elevate your jewelry visuals? Get in touch for a free consultation and quote.</p>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Jaipur, Rajasthan, India</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>akshaybaralagraphics@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone / WhatsApp</h4>
+                            <p>+91 93527 98194</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="Your Message" rows="6" required></textarea>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>StoneShineStudio</h2>
+                    <p>Professional Jewelry Editing & Digital Solutions</p>
+                    <p style="margin-top: 15px; font-size: 0.9rem;">Jaipur, Rajasthan | +91 93527 98194</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li>Jewelry Image Editing</li>
+                        <li>Video Editing & Reels</li>
+                        <li>Diamond Retouching</li>
+                        <li>Meta Ads Creation</li>
+                        <li>Product Photography</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 StoneShineStudio. All Rights Reserved.</p>
+                <p class="credits">Powered by Prince APK Art & Akshay Barala</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox for images -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-img" src="" alt="">
+        </div>
     </div>
 
-</section>
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
 
-<footer>© 2025 StoneShine Studio — Crafted With Perfection ✨</footer>
+        // Portfolio Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                // Filter gallery items
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
 
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+        
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imgSrc = item.querySelector('img').getAttribute('src');
+                lightboxImg.setAttribute('src', imgSrc);
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const subject = this.querySelector('input[placeholder="Subject"]').value;
+            const message = this.querySelector('textarea').value;
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hello StoneShineStudio!%0A%0AName: ${name}%0AEmail: ${email}%0ASubject: ${subject}%0AMessage: ${message}%0A%0AI need jewelry editing services.`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/919352798194?text=${whatsappMessage}`, '_blank');
+            
+            // Reset form
+            this.reset();
+            
+            // Show success message
+            alert('Thank you! Opening WhatsApp to send your message.');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 992) {
+                        document.querySelector('.nav-links').style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.backgroundColor = 'rgba(15, 15, 26, 0.98)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.backgroundColor = 'rgba(15, 15, 26, 0.95)';
+            }
+        });
+
+        // Fade-in animation on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        fadeInOnScroll(); // Initial check
+    </script>
 </body>
 </html>
