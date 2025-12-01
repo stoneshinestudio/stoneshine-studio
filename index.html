@@ -348,39 +348,46 @@
             transform: translateY(-10px);
         }
 
-        .video-thumbnail {
-            height: 200px;
+        .video-player {
             width: 100%;
-            background: linear-gradient(45deg, var(--dark-bg), var(--light-bg));
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 250px;
             position: relative;
             overflow: hidden;
+            border-radius: 10px 10px 0 0;
         }
 
-        .video-thumbnail i {
-            font-size: 4rem;
-            color: var(--gold);
-            z-index: 2;
-        }
-
-        .video-thumbnail::after {
-            content: '';
-            position: absolute;
+        .video-player video {
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            object-fit: cover;
+            display: block;
         }
 
         .video-info {
-            padding: 25px;
+            padding: 20px;
+            text-align: center;
         }
 
         .video-info h3 {
             color: var(--text-light);
             margin-bottom: 10px;
             font-size: 1.3rem;
+        }
+
+        .video-number {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-bg);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 10px;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
 
         /* ===== SERVICES ===== */
@@ -821,8 +828,8 @@
             </div>
             
             <div class="gallery">
-                <!-- YOUR ACTUAL IMAGES FROM GITHUB -->
-                <div class="gallery-item fade-in" data-category="rings">
+                <!-- YOUR ACTUAL IMAGES -->
+                <div class="gallery-item fade-in" data-category="bangles">
                     <img src="images/bangles.png" alt="Bangles Editing">
                     <div class="gallery-overlay">
                         <h3>Bangles Retouching</h3>
@@ -831,7 +838,7 @@
                 </div>
                 
                 <div class="gallery-item fade-in" data-category="earrings">
-                    <img src="images/earring.png" alt="Earrings Editing">
+                    <img src="images/earrings.png" alt="Earrings Editing">
                     <div class="gallery-overlay">
                         <h3>Earrings Editing</h3>
                         <p>Diamond earrings sparkle enhancement</p>
@@ -839,7 +846,7 @@
                 </div>
                 
                 <div class="gallery-item fade-in" data-category="necklaces">
-                    <img src="images/weckbox.png" alt="Necklace Editing">
+                    <img src="images/necklace.png" alt="Necklace Editing">
                     <div class="gallery-overlay">
                         <h3>Necklace Retouching</h3>
                         <p>Polki necklace color correction</p>
@@ -847,14 +854,14 @@
                 </div>
                 
                 <div class="gallery-item fade-in" data-category="rings">
-                    <img src="images/mng.png" alt="Rings Editing">
+                    <img src="images/rings.png" alt="Rings Editing">
                     <div class="gallery-overlay">
                         <h3>Rings Enhancement</h3>
                         <p>Diamond rings professional editing</p>
                     </div>
                 </div>
                 
-                <!-- Additional images if you have more -->
+                <!-- Additional backup images -->
                 <div class="gallery-item fade-in" data-category="necklaces">
                     <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Gold Necklace Editing">
                     <div class="gallery-overlay">
@@ -885,38 +892,44 @@
             
             <div class="video-container">
                 <div class="video-item fade-in">
-                    <div class="video-thumbnail">
-                        <video controls style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+                    <div class="video-player">
+                        <video controls>
                             <source src="videos/reel1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="video-info">
-                        <h3>Reel 1 - Diamond Collection</h3>
+                        <h3>Diamond Collection Reel</h3>
                         <p>Trendy transitions with premium music</p>
+                        <div class="video-number">1</div>
                     </div>
                 </div>
                 
                 <div class="video-item fade-in">
-                    <div class="video-thumbnail">
-                        <video controls style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+                    <div class="video-player">
+                        <video controls>
                             <source src="videos/reel2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="video-info">
-                        <h3>Reel 2 - Gold Jewellery</h3>
+                        <h3>Gold Jewellery Reel</h3>
                         <p>Engaging showcase with effects</p>
+                        <div class="video-number">2</div>
                     </div>
                 </div>
                 
                 <div class="video-item fade-in">
-                    <div class="video-thumbnail">
-                        <video controls style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+                    <div class="video-player">
+                        <video controls>
                             <source src="videos/reel3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
                         </video>
                     </div>
                     <div class="video-info">
-                        <h3>Reel 3 - Polki Showcase</h3>
+                        <h3>Polki Showcase Reel</h3>
                         <p>High-converting ad creative</p>
+                        <div class="video-number">3</div>
                     </div>
                 </div>
             </div>
@@ -1284,6 +1297,30 @@
         window.addEventListener('scroll', fadeInOnScroll);
         window.addEventListener('load', fadeInOnScroll);
         fadeInOnScroll(); // Initial check
+
+        // Video loading fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('video');
+            
+            videos.forEach(video => {
+                video.addEventListener('error', function() {
+                    console.log('Video failed to load:', this.querySelector('source').src);
+                    
+                    // Show a play button overlay if video fails
+                    const playerDiv = this.parentElement;
+                    playerDiv.innerHTML = `
+                        <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#1a1a2e; color:#ffd700; border-radius:10px; position:relative;">
+                            <i class="fas fa-play-circle" style="font-size:4rem; margin-bottom:15px;"></i>
+                            <p>Click to watch on Instagram</p>
+                            <p style="font-size:0.8rem; color:#ccc; margin-top:10px;">Video preview not available</p>
+                            <div style="position:absolute; bottom:10px; right:10px; background:#25D366; color:white; padding:5px 10px; border-radius:5px; font-size:0.8rem;">
+                                Watch Reel
+                            </div>
+                        </div>
+                    `;
+                });
+            });
+        });
     </script>
 </body>
 </html>
